@@ -1,0 +1,82 @@
+---
+import Card from "@components/Card.astro";
+const { id } = Astro.props;
+const projects = [
+  {
+    imgs: [
+      "/medellin-style/1.webp",
+      "/medellin-style/2.webp",
+      "/medellin-style/3.webp",
+      "/medellin-style/4.webp",
+    ],
+    title: "Medellin Style",
+    link: "https://medellin-style-a2a4e.web.app/",
+  },
+  {
+    imgs: [
+      "/coffee-gui/1.webp",
+      "/coffee-gui/2.webp",
+      "/coffee-gui/3.webp",
+      "/coffee-gui/4.webp",
+    ],
+    title: "Coffee Gui",
+    link: "https://app-coffee-gui.web.app/home",
+  },
+];
+---
+
+<section
+  id={id}
+  class="w-full pt-[10dvh] md:pt-[12vh] px-4 md:px-0 max-w-3xl mx-auto"
+>
+  <h4
+    class="text-balance py-9 uppercase font-bold text-2xl text-primary-dark dark:text-havelock-blue-100 md:text-3xl lg:text-5xl text-center"
+  >
+    Trabajos realizados
+  </h4>
+  <p
+    class="text-pretty text-lg text-primary-dark dark:text-havelock-blue-100 mt-5"
+  >
+    Como desarrollador web me especializo en crear soluciones que se adaptan
+    perfectamente a las necesidades únicas de los clientes. El desarrollo se
+    enfoca en crear sitios web con interfaces minimalistas, atractivas e
+    intuitivas para hacer resaltar tu negocio.
+  </p>
+  <p
+    class="text-pretty text-lg text-primary-dark dark:text-havelock-blue-100 mt-1 mb-5"
+  >
+    Además, el diseño realizado es completamente adaptable a todos los
+    dispositivos, lo que significa que se podrán usar ya sea una computadora de
+    escritorio, una tableta o un teléfono móvil.
+  </p>
+  <div
+    class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8 auto-rows-auto"
+  >
+    {
+      projects.map(({ imgs, link, title }) => (
+        <Card imgs={imgs} title={title} link={link} />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  section {
+    animation: fadeIn linear both;
+    animation-timeline: view();
+    animation-range: entry 1% cover 35%;
+  }
+
+  @keyframes fadeIn {
+    from {
+      scale: 0.7;
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    to {
+      scale: 1;
+      opacity: 100;
+      transform: translateY(0px);
+    }
+  }
+</style>

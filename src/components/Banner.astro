@@ -1,0 +1,22 @@
+---
+import Button from "@components/Button.astro";
+const { id } = Astro.props;
+---
+
+<section
+  id={id}
+  class="h-[100dvh] md:h-screen pt-[10dvh] md:pt-[12vh] w-full px-8 md:px-16 lg:px-32 flex flex-col justify-evenly items-center [&>*]:text-center text-havelock-blue-950 dark:text-havelock-blue-100 [&>*]:animate-fade-down [&>*]:animate-once [&>*]:animate-duration-700"
+>
+  <h1 class="font-bold text-4xl md:5xl lg:text-7xl uppercase text-balance">
+    Diseño web para tu negocio
+  </h1>
+  <h2 class="font-semibold text-xl md:text-2xl lg:text-3xl">
+    Diseña y crea tu propia página web para tu negocio de manera profesional
+    completamente a tu gusto
+  </h2>
+  <h3 class="font-semibold text-lg lg:text-xl">
+    Implementa funcionalidades de autenticación, almacenamiento y datos en
+    tiempo real según tus necesidades
+  </h3>
+  <Button href="/#works"> Mira alguno de los trabajos </Button>
+</section>

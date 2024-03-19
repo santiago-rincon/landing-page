@@ -1,0 +1,20 @@
+---
+interface Props {
+  images: string[];
+}
+const { images } = Astro.props;
+---
+
+<div
+  class="aspect-video w-full relative flex overflow-auto overflow-y-hidden"
+>
+  {
+    images.map((img) => (
+      <img
+        src={img}
+        alt="Application image"
+        class="w-full left-0 sticky object-cover [scroll-snap-align:center] rounded-t-lg"
+      />
+    ))
+  }
+</div>

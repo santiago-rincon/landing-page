@@ -1,0 +1,102 @@
+---
+const { id } = Astro.props;
+import LinkedinIcon from "@icons/Linkedin.astro";
+import WhatsappIcon from "@icons/Whatsapp.astro";
+import MailIcon from "@icons/Mail.astro";
+import PhoneIcon from "@icons/Phone.astro";
+const phone = "3138355260";
+const mail = "csrincon26@gmail.com";
+const linkedin = "https://www.linkedin.com/in/cristian-santiago-rincon-caicedo";
+---
+
+<section id={id} class="w-full max-w-4xl pt-[12vh] pb-10 px-4 mx-auto">
+  <h4
+    class="text-balance py-9 uppercase font-bold text-3xl text-primary-dark dark:text-havelock-blue-100 md:text-3xl lg:text-5xl text-center"
+  >
+    Contáctame
+  </h4>
+  <div
+    class="flex items-centerpx-3 py-6 mx-auto w-full md:w-1/2 h-44 bg-havelock-blue-100 dark:bg-primary-dark rounded-md shadow-lg"
+  >
+    <picture
+      class="mx-3 p-1 -rotate-3 rounded-lg bg-primary-dark/10 dark:bg-havelock-blue-100/10"
+    >
+      <img
+        src="/iam.jpg"
+        alt="Foto de Cristian Santiago Rincón"
+        class="h-full w-auto aspect-square rounded-lg"
+      />
+    </picture>
+
+    <div
+      class="flex justify-evenly flex-col border-l border-primary-dark/30 dark:border-havelock-blue-100/20 m-3 flex-1"
+    >
+      <h3
+        class="text-primary-dark dark:text-havelock-blue-100 font-bold text-xl ms-4"
+      >
+        Santiago Rincón
+      </h3>
+      <h3
+        class="bg-clip-text ms-4 text-transparent bg-gradient-to-r from-havelock-blue-500 to-havelock-blue-900 dark:from-havelock-blue-300 dark:to-havelock-blue-600 text-lg font-bold"
+      >
+        Desarrollador Web
+      </h3>
+      <div
+        class="flex flex-row self-center gap-x-4 [&>*]:inline-block [&>*]:transition-transform text-primary-dark dark:text-havelock-blue-100"
+      >
+        <a
+          href=`https://wa.me/57${phone}`
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:scale-105"
+        >
+          <WhatsappIcon />
+        </a>
+        <a
+          href=`tel:${phone}`
+          target="_blank" rel="noopener noreferrer"
+          class="hover:scale-105"
+        >
+          <PhoneIcon />
+        </a>
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:scale-105"
+        >
+          <LinkedinIcon />
+        </a>
+        <a
+          href=`mailto:${mail}`
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:scale-105"
+        >
+          <MailIcon />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    animation: fadeIn linear both;
+    animation-timeline: view();
+    animation-range: entry 1% cover 40%;
+  }
+
+  @keyframes fadeIn {
+    from {
+      scale: 0.7;
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    to {
+      scale: 1;
+      opacity: 100;
+      transform: translateY(0px);
+    }
+  }
+</style>
