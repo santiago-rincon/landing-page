@@ -1,20 +1,41 @@
 ---
 interface Props {
   images: string[];
+  class?: string;
 }
-const { images } = Astro.props;
+const { images, class: className } = Astro.props;
 ---
 
-<div
-  class="w-full relative flex overflow-auto [scroll-snap-type:x_mandatory]"
->
+<div class=`flex overflow-hidden ${className}`>
   {
     images.map((img) => (
       <img
         src={img}
         alt="Application image"
-        class="w-full left-0 sticky object-cover [scroll-snap-align:center] rounded-t-lg"
+        class="w-full object-cover slider"
+      />
+    ))
+  }
+  {
+    images.map((img) => (
+      <img
+        src={img}
+        alt="Application image"
+        class="w-full object-cover slider"
       />
     ))
   }
 </div>
+<style>
+  .slider {
+    animation: scroll 20s linear infinite;
+  }
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% * 4));
+    }
+  }
+</style>

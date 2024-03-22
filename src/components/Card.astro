@@ -10,9 +10,9 @@ const { imgs, link, title } = Astro.props;
 ---
 
 <article
-  class="flex flex-col w-full bg-havelock-blue-100 dark:bg-primary-dark border border-havelock-blue-200 rounded-lg shadow dark:border-gray-700"
+  class="flex flex-col w-full bg-havelock-blue-100 dark:bg-primary-dark border border-havelock-blue-300/80 rounded-lg shadow dark:border-havelock-blue-700/20"
 >
-  <Carousel images={imgs} />
+  <Carousel images={imgs} class="m-4 rounded-lg" />
   <header
     class="flex items-center justify-between px-5 py-4 text-primary-dark dark:text-havelock-blue-100"
   >
